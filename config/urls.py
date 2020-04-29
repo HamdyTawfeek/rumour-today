@@ -21,4 +21,6 @@ import articles.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', articles.views.index, name='list-articles'),
+    path('articles/<int:id>/email', articles.views.email, name='email'),
+    path('email', articles.views.send_email, name='send-email')
 ]
