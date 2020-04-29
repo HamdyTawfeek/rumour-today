@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Today{% endblock %}
+{% block content %}
+<div class="product-list">
+  {% for article in articles %}
+  <div class="article">
+    {% if article.is_url_image %}
+    <h3>{{ article.title }}</h3>
+    <p>
+      <a href="">
+        <img width="500" src="{{ article.image_url }}" />
+      </a>
+    </p>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
