@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+    db:
+        image: postgres
+        container_name: db
+        networks: ['stack']
+        environment:
+            - "POSTGRES_HOST_AUTH_METHOD=trust"
+    migration:
+        build: .
+        command: bash -c " python3 manage.py makemigrations
+                && python3 manage.py migrate
+                && python3 manage.py loaddata admin.json
+                && python3 manage.py seed_articles"
+        volumes:
+            - .:/usr/src/app
+        depends_on:
+            - db
+        networks: ['stack']
+    web:
+        build: .
+        command: python3 manage.py runserver 0.0.0.0:8000
+        volumes:
+            - .:/usr/src/app
+        ports:
+            - "8000:8000"
+        depends_on:
+            - db
+        networks: ['stack']
+
+networks:
+    stack:
+        driver: bridge
+              

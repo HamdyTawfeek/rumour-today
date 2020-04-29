@@ -11,6 +11,9 @@ class Command(BaseCommand):
         items_data = r.json() 
         for item in items_data["items"]:
             if not Article.objects.filter(title=item["title"]):
-                title, description, image_url = item["title"], item["description"], item["imageUrl"]
-                article_object = Article(title=title, description=description, image_url=image_url)
-                article_object.save()
+                try:
+                    title, description, image_url = item["title"], item["description"], item["imageUrl"]
+                    article_object = Article(title=title, description=description, image_url=image_url)
+                    article_object.save()
+                except:
+                    pass

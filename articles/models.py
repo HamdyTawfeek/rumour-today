@@ -6,8 +6,8 @@ class Article(models.Model):
     """
     Article model
     """
-    title = models.CharField('title', max_length=50)
-    description = models.TextField('description', max_length=500, default='')
+    title = models.CharField('title', max_length=200)
+    description = models.TextField('description', default='',max_length=500)
     image_url = models.URLField(null=True)
 
     def is_url_image(self):
