@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Today Articles{% endblock %}
+
+{% block style %} 
+    .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            }
+{% endblock %}
+\
+{% block content %}
+<div class="product-list">
+  {% for article in articles %}
+  <div class="article">
+    {% if article.is_url_image %}
+    <h3 class="center" >{{ article.title }}</h3>
+    <p>
+      <a href="{% url 'email' article.id %}">
+        <img  src="{{ article.image_url }}" class="center"/>
+      </a>
+    </p>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
