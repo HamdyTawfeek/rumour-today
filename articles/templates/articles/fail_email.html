@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Error{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+  <h1 class="display-3">Sorry!</h1>
+  <p class="lead"><strong>Your message has not been sent. Please try again</strong></p>
+  <hr>
+  <p class="lead">
+    <a class="btn btn-primary btn-sm" href="{% url 'list-articles' %}" role="button">Continue to homepage</a>
+  </p>
+</div>
+{% endblock %}
