@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.html import mark_safe
-
+import requests
 
 class Article(models.Model):
     """
@@ -9,6 +9,13 @@ class Article(models.Model):
     title = models.CharField('title', max_length=50)
     description = models.TextField('description', max_length=500, default='')
     image_url = models.URLField(null=True)
+
+    def is_url_image(self):
+        image_formats = ("image/png", "image/jpeg", "image/jpg")
+        r = requests.head(self.image_url)
+        if r.headers["content-type"] in image_formats:
+            return True
+        return False
 
     def image_tag(self):
         # to show the image in  the admin site
