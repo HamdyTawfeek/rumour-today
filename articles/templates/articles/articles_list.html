@@ -1,14 +1,24 @@
 {% extends "base.html" %}
 {% block title %}Today{% endblock %}
+
+{% block style %} 
+    .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            }
+{% endblock %}
+\
 {% block content %}
 <div class="product-list">
   {% for article in articles %}
   <div class="article">
     {% if article.is_url_image %}
-    <h3>{{ article.title }}</h3>
+    <h3 class="center" >{{ article.title }}</h3>
     <p>
       <a href="">
-        <img width="500" src="{{ article.image_url }}" />
+        <img  src="{{ article.image_url }}" class="center"/>
       </a>
     </p>
     {% endif %}
