@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Today{% endblock %}
+{% block title %}Today Articles{% endblock %}
 
 {% block style %} 
     .center {
@@ -17,7 +17,7 @@
     {% if article.is_url_image %}
     <h3 class="center" >{{ article.title }}</h3>
     <p>
-      <a href="">
+      <a href="{% url 'email' article.id %}">
         <img  src="{{ article.image_url }}" class="center"/>
       </a>
     </p>
