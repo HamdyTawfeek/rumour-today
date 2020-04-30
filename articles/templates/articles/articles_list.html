@@ -12,7 +12,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+
 }
+
 </style>
 {% endblock %}
 
@@ -20,14 +22,14 @@
 <div class="container">
     <div class="row mt-5 justify-content-center">
     {% for article in articles %}
-    {% if article.valid_image %}
+    
         <div class="card card-custom mx-2 mb-3">
             <h4 class="card-title">{{ article.title }}</h4>
             <a href="{% url 'email' article.id %}">
-               <img src="{{ article.image_url }}" alt="" class="card-img">
+               <img src="{{ article.image_url }}" class="card-img" onerror="this.src='https://via.placeholder.com/297x200.png?text=Image+Not+Found';" >
            </a>
         </div>
-      {% endif %}
+    
     {% endfor %}    
     </div>
 </div>

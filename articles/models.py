@@ -9,7 +9,7 @@ class Article(models.Model):
     title = models.CharField('title', max_length=200)
     description = models.TextField('description', default='',max_length=500)
     image_url = models.URLField(null=True)
-    valid_image = models.BooleanField(default=False)
+    #valid_image = models.BooleanField(default=False)
 
     def image_tag(self):
         '''

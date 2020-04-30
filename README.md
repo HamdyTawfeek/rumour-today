@@ -80,3 +80,4 @@ To run the project locally,
 4. Adding test cases for the views.
 5. Adding API endpoints to enable CRUD operations on the application.
 6. Improving UI
+7. Using a production server for master branch and setting "Debug = False". For now I'm usieng "Debug = True" so the admin view loads it's static files.
