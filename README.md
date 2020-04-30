@@ -76,7 +76,8 @@ To run the project locally,
 1. Moving Out of the Amazon SES Sandbox: I will open a ticket on Amazon to change my account SES service limit to enable any mail recipient without verifying the mail first, but for now I have to verify all the mails that will use the service. Please reach out to me if you need to verify any additional email than the provided emails.
 
 2. Adding authentication to the application.
-3. Sync the database with `nousdigital endpoint`. But, for now the application calls the endpoint only one time at the start.
+3. Sync the database with `nousdigital endpoint`. But, for now the application calls the endpoint only one time at the start of the application.
 4. Adding test cases for the views.
 5. Adding API endpoints to enable CRUD operations on the application.
 6. Improving UI
+7. Using a production server for master branch and setting "Debug = False". For now I'm usieng "Debug = True" so the admin view loads it's static files.
