@@ -29,8 +29,8 @@ def send_email(request):
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
             sender = form.cleaned_data['sender']
-            recipients = ['hamdy.tawfeek92@gmail.com']
-            send_mail(subject, message, sender, recipients, fail_silently=False)
+            recipient = form.cleaned_data['recipient'] 
+            send_mail(subject, message, sender, [recipient], fail_silently=False)
             return render(request, 'articles/success_email.html')
     
     return render(request, 'articles/fail_email.html')

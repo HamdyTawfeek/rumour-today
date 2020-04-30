@@ -11,17 +11,17 @@
 {% endblock %}
 \
 {% block content %}
-<div class="product-list">
+<div class="articles-list">
   {% for article in articles %}
-  <div class="article">
-    {% if article.is_url_image %}
+  <div class="article center">
+  {% if article.valid_image %}
     <h3 class="center" >{{ article.title }}</h3>
     <p>
       <a href="{% url 'email' article.id %}">
-        <img  src="{{ article.image_url }}" class="center"/>
+        <img  src="{{ article.image_url }}"/>
       </a>
     </p>
-    {% endif %}
+  {% endif %}
   </div>
   {% endfor %}
 </div>

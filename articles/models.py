@@ -9,13 +9,7 @@ class Article(models.Model):
     title = models.CharField('title', max_length=200)
     description = models.TextField('description', default='',max_length=500)
     image_url = models.URLField(null=True)
-
-    def is_url_image(self):
-        image_formats = ("image/png", "image/jpeg", "image/jpg")
-        r = requests.head(self.image_url)
-        if r.headers["content-type"] in image_formats:
-            return True
-        return False
+    valid_image = models.BooleanField(default=False)
 
     def image_tag(self):
         # to show the image in  the admin site

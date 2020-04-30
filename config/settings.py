@@ -131,4 +131,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST = 'email-smtp.us-east-1.amazonaws.com'
+EMAIL_HOST_USER = 'AKIAVCEPT4X5Q6XNTQHQ'
+EMAIL_HOST_PASSWORD = 'BNH0Zw4pou8RJRBx5sURFgFtQvYh5vWbad7I0j8cW/n+'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
+
