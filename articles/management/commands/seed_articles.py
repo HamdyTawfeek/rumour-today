@@ -4,6 +4,9 @@ import requests
 
 
 def is_url_image(image_url):
+    '''
+    Check if image url is not broken to decide wether to render it or not!
+    '''
     image_formats = ("image/png", "image/jpeg", "image/jpg")
     r = requests.head(image_url)
     if r.headers["content-type"] in image_formats:
