@@ -12,7 +12,9 @@ class Article(models.Model):
     valid_image = models.BooleanField(default=False)
 
     def image_tag(self):
-        # to show the image in  the admin site
+        '''
+        Image tag to show the image in the admin site
+        '''
         return mark_safe(f'<img src="{self.image_url}" alt="Image not found" \
             style="border: 1px solid #000; max-width:250px; max-height:250px;"/>')
 
