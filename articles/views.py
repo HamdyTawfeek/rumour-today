@@ -46,5 +46,10 @@ def send_email(request):
                 return render(request, 'articles/fail_email.html')
         return HttpResponseBadRequest("Form is not valid", status=400)
     return HttpResponseBadRequest("POST method is only allowed", status=400)
+
+
+def error_404(request, exception):
+    data = {}
+    return render(request,'articles/404.html', data)
     
     
