@@ -63,8 +63,8 @@ To run the project locally,
 
 1. Open a terminal:
   ```shell
-  git clone https://github.com/HamdyTawfeek/news-today.git
-  cd news-today
+  git clone https://github.com/HamdyTawfeek/rumour-today.git
+  cd rumour-today
   docker-compose up
   ```
 
