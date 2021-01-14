@@ -4,7 +4,7 @@
 
 ### Introduction
 
-News-Today is a simple application that renders a list of articles and give you the choice of sending an email with 
+Rumour-Today is a simple application that renders a list of articles and give you the choice of sending an email with 
 title and description of a given article provided for you.
 
 ### Tech Stack
